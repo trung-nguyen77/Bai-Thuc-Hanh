@@ -22,7 +22,7 @@ h1 {
 }
 .z {
     background: yellow;
-    text-align: center;
+    text-align: left;
 }
 table {
     width: 100%;
@@ -34,7 +34,7 @@ body {
 }
 th{ font-family: 'Patua One', cursive;
     font-size:16px;
-    font-weight:400;
+    font-weight:900;
     text-align:center;
     padding:20px;
     border-color: white;
