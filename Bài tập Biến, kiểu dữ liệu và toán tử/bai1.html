@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<script>
+    let PhysicsMark;
+    let ChemistryMark;
+    let BiologicalMark;
+
+    PhysicsMark = prompt("Nhập điểm Vật Lý")
+    PhysicsMark = parseFloat(PhysicsMark)
+    ChemistryMark= prompt("Nhập điểm Hóa Học");
+    ChemistryMark= parseFloat(ChemistryMark)
+    BiologicalMark= prompt("Nhập điểm Sinh Học");
+    BiologicalMark= parseFloat(BiologicalMark)
+    let GPA = (PhysicsMark + ChemistryMark + BiologicalMark) / 3
+    let Sum = (PhysicsMark + ChemistryMark + BiologicalMark)
+    document.write("Điểm trung bình = "+GPA)
+    document.write('<br/>')
+    document.write("Tổng điểm = "+Sum)
+</script>
+</body>
+</html>
