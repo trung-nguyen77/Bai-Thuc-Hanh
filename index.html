@@ -2,35 +2,49 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>HelloWorld</title>
+    <title>Title</title>
 </head>
+
 <body>
-<ul>
-    <li><strong>Việt Nam</strong></li>
-    <ol>
-        <li>Hà Nội</li>
-        <li>Sài Gòn</li>
-        <li>Huế</li>
-        <li>Đà Nẵng</li>
-    </ol>
-    <li><strong>Hoa Kỳ</strong></li>
-    <ol>
-        <li>New York</li>
-        <li>Los Angeles</li>
-        <li>Chicago</li>
-        <li>Houston</li>
-    </ol>
-    <li><strong>Trung Quốc</strong></li>
-    <ol>
-        <li>Beijing</li>
-        <li>Chongqing</li>
-        <li>Shanghai</li>
-        <li>Tianjin</li>
-    </ol>
+
+<script>
+    let year = parseInt(prompt("Enter a year"));
+    // if (year % 4 === 0) {
+    //     if (year % 100 === 0) {
+    //         if (year % 400 === 0) {
+    //             alert(year + " is a leap year");
+    //         } else {
+    //             alert(year + " is NOT a leap year");
+    //         }
+    //     } else {
+    //         alert(year + " is a leap year");
+    //     }
+    // } else {
+    //     alert(year + " is NOT a leap year");
+    // }
+    let isLeapYear = false;
+
+    let isDivisibleBy4 = year % 4 == 0;
+    if (isDivisibleBy4) {
+        let isDivisibleBy100 = year % 100 == 0;
+        if (isDivisibleBy100) {
+            let isDivisibleBy400 = year % 400 == 0;
+            if (isDivisibleBy400) {
+                isLeapYear = true;
+            }
+        } else {
+            isLeapYear = true;
+        }
+    }
+
+    if (isLeapYear) {
+        alert(year + " is a leap year");
+    } else {
+        alert(year + " is NOT a leap year");
+    }
 
 
-</ul>
-<p></p>
+
+</script>
 </body>
-
 </html>
