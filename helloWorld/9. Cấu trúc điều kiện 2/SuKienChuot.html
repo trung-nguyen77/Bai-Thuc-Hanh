@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Thực hành] Sự kiện chuột</title>
+</head>
+<body>
+   <form>
+      <img id="myImage" src="https://th.bing.com/th/id/OIP.LZRL38V8crKX3n37zAzbeAHaHa?w=181&h=181&c=7&r=0&o=5&dpr=1.25&pid=1.7" />
+      <p>Click button below to move the image to right</p>
+      <input type="button" value="Click Me" onclick="moveRight();"/>
+   </form>
+
+   <script>
+       // let imgBall = null;
+       let imgBall = document.getElementById('myImage');
+       function init() {
+           imgBall = document.getElementById('myImage');
+           imgBall.style.position = 'relative';
+           imgBall.style.left = '0px';
+       }
+       function moveRight() {
+           imgBall.style.left = parseInt(imgBall.style.left) + 10 + 'px';
+       }
+       window.onload = init;
+
+   </script>
+
+</body>
+</html>

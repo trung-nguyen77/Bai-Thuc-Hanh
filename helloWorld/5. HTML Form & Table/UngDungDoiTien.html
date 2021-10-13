@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<table>
+    <tr>
+        <th>Amount</th>
+        <th>From Currency</th>
+        <th>To Currency</th>
+        <th>Result</th>
+    </tr>
+    <tr>
+        <td><label for="input"><input type="text" id="input"></label></td>
+        <td>
+            <label for="fromCurrency">
+                <select id="fromCurrency">
+                    <option value="USD">USD</option>
+                    <option value="VND">VNĐ</option>
+                </select>
+            </label>
+        </td>
+        <td>
+            <label for="toCurrency">
+                <select id="toCurrency">
+                    <option value="VND">VNĐ</option>
+                    <option value="USD">USD</option>
+                </select>
+            </label>
+        </td>
+        <td><button onclick="changeMoney()">Convert</button></td>
+    </tr>
+</table>
+<h1 id="result"></h1>
+<script>
+    function changeMoney() {
+        let input= parseInt(document.getElementById("input").value)
+        let formCurrency = parseInt(document.getElementById("formCurerncy").value)
+        let toCurrency= parseInt(document.getElementById("toCurrency").value)
+
+        if ((formCurrency === "USD" && toCurrency === "USD") || (formCurrency === "VND" && toCurrency === "VND")){
+            document.getElementById("result").innerHTML = "Số tiền: " + input
+        } else if (formCurrency === "USD" && toCurrency === "VND") {
+             document.getElementById("result").innerHTML = "Số tiền: " + (input*23000)
+        } else {
+             document.getElementById("result").innerHTML = "Số tiền: " + (input/23000)
+        }
+    }
+
+
+</script>
+
+</body>
+</html>
+
