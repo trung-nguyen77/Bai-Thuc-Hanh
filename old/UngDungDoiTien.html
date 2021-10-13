@@ -18,16 +18,16 @@
         <td>
             <label for="fromCurrency">
                 <select id="fromCurrency">
-                    <option value="1">USD</option>
-                    <option value="23000">VNĐ</option>
+                    <option value="USD">USD</option>
+                    <option value="VND">VNĐ</option>
                 </select>
             </label>
         </td>
         <td>
             <label for="toCurrency">
                 <select id="toCurrency">
-                    <option value="23000">VNĐ</option>
-                    <option value="1">USD</option>
+                    <option value="VND">VNĐ</option>
+                    <option value="USD">USD</option>
                 </select>
             </label>
         </td>
@@ -40,8 +40,16 @@
         let input= parseInt(document.getElementById("input").value)
         let formCurrency = parseInt(document.getElementById("formCurerncy").value)
         let toCurrency= parseInt(document.getElementById("toCurrency").value)
-        document.getElementById("result").innerHTML = input / formCurrency * toCurrency
+
+        if ((formCurrency === "USD" && toCurrency === "USD") || (formCurrency === "VND" && toCurrency === "VND")){
+            document.getElementById("result").innerHTML = "Số tiền: " + input
+        } else if (formCurrency === "USD" && toCurrency === "VND") {
+             document.getElementById("result").innerHTML = "Số tiền: " + (input*23000)
+        } else {
+             document.getElementById("result").innerHTML = "Số tiền: " + (input/23000)
+        }
     }
+
 
 </script>
 
