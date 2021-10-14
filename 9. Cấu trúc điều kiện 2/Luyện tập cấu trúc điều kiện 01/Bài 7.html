@@ -1,10 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<h3>Tính cước điện thoại</h3>
+Bảng giá: <br>
+Trên 100p: 500k/ Trên 60p: 400k/ Trên 30p: 300k/  10p: 200k <br><br>
+Nhập thời gian gọi: <br>
+<input type="number" id="number"> <br> <br>
+<button onclick="time()">Tính tiền</button>
+<script>
+  function time(){
+    let callTime = document.getElementById("number").value;
+    if (callTime > 100) {
+      document.write("Cước phí là 500k VND")
+    } else if (callTime > 60) {
+      document.write("Cước phí là 400k VND")
+    } else if (callTime>30){
+      document.write("Cước phí là 300k VND")
+    } else if (callTime > 10){
+      document.write("Cước phí là 200k VND")
+    } else {
+      document.write("Cước phí là 100k VND")
+    }
+  }
+</script>
 </body>
 </html>

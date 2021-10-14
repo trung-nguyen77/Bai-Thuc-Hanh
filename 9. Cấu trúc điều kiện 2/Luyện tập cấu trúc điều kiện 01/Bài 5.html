@@ -1,10 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>XẾP HẠNG HỌC LỰC</title>
 </head>
 <body>
-$END$
+<h4>XẾP HẠNG HỌC LỰC</h4>
+Điểm kiểm tra : <br><br>
+<input type="number" id="so1"> <br><br>
+Điểm giữa kỳ : <br><br>
+<input type="number" id="so2"> <br><br>
+Điểm cuối kỳ : <br><br>
+<input type="number" id="so3"> <br><br>
+<button onclick="diem()">Xếp Hạng</button>
+<script>
+  function diem() {
+    let diem1 = +document.getElementById("so1").value;
+    let diem2 = +document.getElementById("so2").value;
+    let diem3 = +document.getElementById("so3").value;
+    let sodiem = (diem1 + diem2*2 + diem3*3)/6;
+    if (sodiem >= 8) {
+      document.write('Học lực giỏi')
+    } else if (sodiem >= 7) {
+      document.write('Học lực khá')
+    } else if (sodiem >= 5) {
+      document.write('Học lực trung bình')
+    } else {
+      document.write('Học lực yếu')
+    }
+  }
+</script>
 </body>
 </html>

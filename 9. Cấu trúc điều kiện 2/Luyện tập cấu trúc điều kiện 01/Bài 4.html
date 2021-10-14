@@ -1,10 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<h5>Mời nhập số</h5>
+Số thứ 1: <br>
+<input type="number" id="so1"><br>
+Số thứ 2: <br>
+<input type="number" id="so2"><br>
+Số thứ 3: <br>
+<input type="number" id="so3"><br><br>
+<button onclick="nhap()">Kiểm tra</button>
+<script>
+  function nhap() {
+    let st1 = +document.getElementById("so1").value;
+    let st2 = +document.getElementById("so2").value;
+    let st3 = +document.getElementById("so3").value;
+    if (st1 > st2) {
+      if (st1 > st3) {
+        alert(st1 + ' là số lớn nhất')
+      }
+    } else if (st2 > st3) {
+      alert(st2 + ' là số lớn nhất')
+    } else {
+      alert(st3 + ' là số lớn nhất')
+    }
+  }
+</script>
 </body>
 </html>

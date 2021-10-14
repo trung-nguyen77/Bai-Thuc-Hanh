@@ -1,10 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<form>
+  <input type="checkbox" onclick="check('good')" id="good"> GOOD
+  <input type="checkbox" onclick="check('fast')" id="fast">FAST
+  <input type="checkbox" onclick="check('cheap')" id="cheap">CHEAP
+  <script>
+    function check(value) {
+      let good = document.getElementById('good')
+      let fast = document.getElementById('fast')
+      let cheap = document.getElementById('cheap')
+      if (value == 'good') {
+        if (fast.checked && cheap.checked) {
+          cheap.checked = false;
+        }
+      } else if (value == 'cheap') {
+        if (good.checked && fast.checked) {
+          fast.checked = false;
+        }
+      } else {
+        if (good.checked && cheap.checked) {
+          good.checked = false;
+        }
+      }
+    }
+  </script>
+</form>
 </body>
 </html>

@@ -1,10 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<form>
+    <table>
+        <tr>
+            <th colspan="4">Calculator</th>
+        </tr>
+        <tr>
+            <td colspan="4" style="border: inset"><input type="text" id="display"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="1" onclick="valueIn(this.value)"></td>
+            <td><input type="button" value="2" onclick="valueIn(this.value)"></td>
+            <td><input type="button" value="3" onclick="valueIn(this.value)"></td>
+            <td><input type="button" value="+" onclick="valueIn(this.value)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="4" onclick="valueIn(this.value)"></td>
+            <td><input type="button" value="5" onclick="valueIn(this.value)"></td>
+            <td><input type="button" value="6" onclick="valueIn(this.value)"></td>
+            <td><input type="button" value="-" onclick="valueIn(this.value)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="7" onclick="valueIn(this.value)"></td>
+            <td><input type="button" value="8" onclick="valueIn(this.value)"></td>
+            <td><input type="button" value="9" onclick="valueIn(this.value)"></td>
+            <td><input type="button" value="*" onclick="valueIn(this.value)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="=" onclick="calculator()"></td>
+            <td><input type="button" value="0" onclick="valueIn(this.value)"></td>
+            <td><input type="reset"  value="C"></td>
+            <td><input type="button" value="/" onclick="valueIn(this.value)"></td>
+        </tr>
+        <script>
+            function valueIn (value) {
+                document.getElementById("display").value = document.getElementById("display").value + value;
+            }
+            function calculator () {
+                let display = eval(document.getElementById("display").value);
+                document.getElementById("display").value = display
+            }
+            
+        </script>
+    </table>
+</form>
+
 </body>
 </html>

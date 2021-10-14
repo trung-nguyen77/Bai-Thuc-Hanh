@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<h4>Kiểm tra độ tuổi vào lớp 10</h4><br>
+Nhập tuổi :<br>
+<input type="text" size="30" id="so"><br><br>
+<button onclick="check()">Kiểm tra</button>
+<script>
+  function check() {
+    let so = +document.getElementById("so").value;
+    if (so > 16) {
+      document.write("Đủ tuổi")
+    } else {
+      document.write("Không đủ tuổi")
+    }
+  }
+</script>
 </body>
 </html>

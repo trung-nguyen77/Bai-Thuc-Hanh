@@ -1,10 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+Mời nhập số: <br>
+<input type="number" id="so"><br>
+<button onclick="inPut()">Check</button>
+<script>
+    function inPut(){
+        let so = document.getElementById('so').value;
+        if (so > 0){
+            document.write('Là số lớn hơn 0')
+        } else {
+            document.write('Là số nhỏ hơn 0')
+        }
+    }
+</script>
 </body>
 </html>
