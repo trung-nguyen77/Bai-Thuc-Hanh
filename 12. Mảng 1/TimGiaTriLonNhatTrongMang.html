@@ -7,7 +7,17 @@
 <body>
 <!--Viết một chương trình JavaScript để tìm giá trị lớn nhất trong mảng cho trước.-->
 <script>
-    
+    let numbers = [-3, 5, 1, 3, 2, 10];
+    let max = numbers[0];
+    let indexOfMax = 0;
+    for (let i = 1; i < numbers.length; i++) {
+        if (numbers[i]> max) {
+            max = numbers[i];
+            indexOfMax = i;
+        }
+    }
+
+
 </script>
 
 </body>
