@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let i;
+    i = prompt("Current Temperature: ")
+    while (i>100 || i<20) {
+        if (i > 100) {
+            alert("Let's Lower the Temperature!")
+            i = prompt("Current Temperature: ")
+        }
+
+        if (i < 20) {
+            alert("Let's Raise  the Temperature")
+            i = prompt("Current Temperature: ")
+        }
+
+    }
+
+
+</script>
+</body>
+</html>
