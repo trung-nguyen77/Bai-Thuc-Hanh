@@ -8,15 +8,15 @@
 <h3>Kiểm tra tiền hoa hồng </h3>
 Doanh số: <br><br>
 <input type="number" id="so"><br><br>
-<button onclick="doanhso()">Kiểm tra</button>
+<button onclick="DoanhSo()">Kiểm tra</button>
 <script>
-    function doanhso() {
+    function DoanhSo() {
         let money = +document.getElementById("so").value;
         if (money > 5000000) {
             document.write("Hưởng 10%")
-        }else if (money > 3000000) {
+        } else if (money > 3000000) {
             document.write("Hưởng 5%")
-        } else if (money>1000000) {
+        } else if (money > 1000000) {
             document.write("Hưởng 3%")
         } else {
             document.write("Không được hưởng")

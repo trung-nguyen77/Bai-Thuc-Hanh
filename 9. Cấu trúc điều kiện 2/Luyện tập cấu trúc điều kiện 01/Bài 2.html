@@ -7,15 +7,19 @@
 <body>
 <h4>Kiểm tra độ tuổi vào lớp 10</h4><br>
 Nhập tuổi :<br>
-<input type="text" size="30" id="so"><br><br>
+<input type="text" size="30" id="age"><br><br>
 <button onclick="check()">Kiểm tra</button>
+<p id="result">
+
+</p>
 <script>
+
   function check() {
-    let so = +document.getElementById("so").value;
-    if (so > 16) {
-      document.write("Đủ tuổi")
+    let age = +document.getElementById("age").value;
+    if (age > 16) {
+      document.getElementById("result").innerHTML ="Đủ tuổi"
     } else {
-      document.write("Không đủ tuổi")
+      document.getElementById("result").innerHTML= "Not enght"
     }
   }
 </script>

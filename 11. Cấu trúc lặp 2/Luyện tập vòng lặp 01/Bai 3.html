@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let a = prompt("First num of fibonacci: ");
+    let b = prompt("Second num of fibonacci: ");
+    let c;
+    for (let i = 0; i < 20; i++) {
+        c = a + b
+        a = b
+        b = c
+        document.write(c + " ")
+    }
+
+</script>
 </body>
 </html>

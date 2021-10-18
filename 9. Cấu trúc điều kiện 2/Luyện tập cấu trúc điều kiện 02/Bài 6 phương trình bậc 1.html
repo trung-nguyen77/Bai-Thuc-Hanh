@@ -6,16 +6,16 @@
 </head>
 <body>
 <script>
-    let a = prompt('Nhập a: ');
-    let b = prompt('Nhập b: ');
+    let a = prompt('Input a: ');
+    let b = prompt('Input b: ');
     let c = (-b/a);
-    if (a == 0) {
-        if (b == 0){
-            document.write('Phương trình có vô số nghiệm')
+    if (a === 0) {
+        if (b === 0){
+            document.write('The equation has infinitely many solutions')
         }else
-            document.write('Phương trình vô nghiệm')
+            document.write('The equation has no solution')
     }else
-        document.write('Phương trình có nghiệm là: ' + c)
+        document.write('The equation that has a solution is: ' + c)
 </script>
 </body>
 </html>

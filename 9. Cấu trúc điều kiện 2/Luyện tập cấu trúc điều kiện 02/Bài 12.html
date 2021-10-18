@@ -6,18 +6,18 @@
 </head>
 <body>
 <script>
-  let a = prompt("Số tiền vay: ");
-  let b = prompt("Số tháng cho vay: ");
-  let lai = a * 1 / 10;
-  let lai2 = a * 1 / 9;
-  let lai3 = a * 1 / 7;
-  if (b > 3){
-    document.write("Tiền lãi là: "+ lai2)
-  } else if (b > 6) {
-    document.write("Tiền lãi là: "+ lai3)
-  } else {
-    document.write("Tiền lãi là: " + lai)
-  }
+    let a = prompt("Số tiền vay: ");
+    let b = prompt("Số tháng cho vay: ");
+    let lai1 = a * 1 / 10;
+    let lai2 = a * 1 / 9;
+    let lai3 = a * 1 / 7;
+    if (b > 6) {
+        document.write("Tiền lãi là: " + lai3)
+    } else if (b > 3) {
+        document.write("Tiền lãi là: " + lai2)
+    } else {
+        document.write("Tiền lãi là: " + lai1)
+    }
 </script>
 </body>
 </html>

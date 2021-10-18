@@ -5,6 +5,17 @@
     <title>Title</title>
 </head>
 <body>
-
+<script>
+    let a = prompt("First num of fibonacci: ");
+    let b = prompt("Second num of fibonacci: ");
+    let c;
+    for (let i = 0; i < 20; i++) {
+        c = a + b
+        a = b
+        b = c
+        total = total + c
+    }
+    document.write("Sum of the first 20 numbers in the fibonacci sequence: "+ total)
+</script>
 </body>
 </html>

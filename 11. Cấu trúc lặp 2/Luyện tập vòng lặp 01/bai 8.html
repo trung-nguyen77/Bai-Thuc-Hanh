@@ -1,10 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<!--Ứng dụng hiển thị cửa sổ prompt cho phép người dùng nhập vào muốn đoán trong khoảng nào-->
+<!--Ứng dụng chọn ra số ngẫu nhiên trong khoảng mà ngườI dùng chọn-->
+<!--Ứng dụng hiển thị cửa số prompt cho người dùng nhập giá trị mà người dùng đoán-->
+<!--Ứng dụng lấy kết quả và so sánh với giá trị ngẫu nhiên.-->
+<!--Nếu bằng thì hiển thị thông báo chúc mừng và kết thúc lượt chơi-->
+<!--Nếu lớn hơn hoặc bé thua thì hiển thị thông báo lớn hơn hay bé tùy thuộc vào người dùng lựa chọn.-->
+<!--Chú ý: Người dùng chỉ được lựa chọn tối đa ba lần-->
+<script>
+    let firstNum = +prompt("Input First Number: ");
+    let lastNum = +prompt("Input First Number: ");
+    let luckyNumber;
+    if (firstNum > lastNum) {
+        luckyNumber = Math.floor(Math.random() * (firstNum - lastNum + 1)) + lastNum;
+    } else {
+        luckyNumber = Math.floor(Math.random() * (lastNum - firstNum + 1)) + firstNum;
+    }
+    for (let i = 0; i < 2; i++) {
+        let numbers = +prompt("Please enter your prediction!")
+        if (luckyNumber === numbers) {
+            alert("Congratulations you guessed correctly!")
+            break
+
+        } else {
+            if (luckyNumber > luckyNumber) {
+                alert("Please enter a larger number!")
+            } else {
+                alert("Please enter a larger number!")
+            }
+        }
+    }
+
+</script>
 </body>
 </html>

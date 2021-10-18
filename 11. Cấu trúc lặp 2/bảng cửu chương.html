@@ -1,10 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Bảng cửu chương</title>
 </head>
 <body>
-$END$
+<script>
+    let subtend
+    let k = "<table style='border: 1px solid; width: 900px; text-align: left'>";
+    for ( let i = 1; i <= 9; i++) {
+        k = k + "<tr>";
+        for (let j = 1; j < 10; j++) {
+            if ( j === 1) {
+                continue;
+            }
+            subtend = i * j;
+            k = k + "<td style='border: 1px solid'>" + j + "x" + i + '=' + subtend + "</td>";
+        }
+        k = k + '</td>';
+    }
+    k = k + '</table>'
+    document.write(k)
+</script>
 </body>
 </html>
