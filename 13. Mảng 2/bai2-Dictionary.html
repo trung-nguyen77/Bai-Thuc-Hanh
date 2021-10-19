@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Dictionary</h1>
+<!--<label for="english"></label>-->
+<!--<input type="text" id="english" placeholder="english">-->
+<!--<button onclick="translate()" value="search">Translate</button><br>-->
+<!--<label for="vietnamese"></label>-->
+<!--<input type="text" id="vietnamese" placeholder="vietnamese">-->
+<!--<p id="result"></p>-->
+<label><input type="text" id="inputWord"></label>
+<button value="search" onclick="trans()">Translate</button>
+<p id="result"></p>
+<script>
+    function trans() {
+        let inputWord = document.getElementById("inputWord").value;
+        let english = ["hello", "eagle", "cat", "dog", "elephant", "lion", "tiger", "dragon", "monkey"];
+        let vietnamese = ["Xin chao", "Đại Bàng", "mèo", "chó", "voi", "sư tử", "hổ", "rồng", "khỉ"];
+        let flag = true;
+        for (let i = 0; i < english.length; i++) {
+            if (inputWord === english[i]) {
+                flag = false;
+                document.getElementById("result").innerHTML = vietnamese[i];
+                break;
+            }
+            if (inputWord === vietnamese[i]) {
+                flag = false;
+                document.getElementById("result").innerHTML = english[i];
+                break;
+            }
+        }
+        if (flag === true) {
+            document.getElementById("result").innerHTML = "Không có trong từ điển";
+        }
+    }
+
+</script>
+</body>
+
+</html>
