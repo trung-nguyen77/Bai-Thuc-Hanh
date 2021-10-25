@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p id='result'></p>
+<p id='result1'></p>
+<script>
+    // kiểm tra xem một số nguyên bất kỳ có phải là số nguyên tố hay không
+    // Sử dụng phương thức này để tìm tất cả các số nguyên tố nhỏ hơn 10000
+    let number = +prompt('Input a number: ')
+    function isPrime(number) {
+        let check = true;
+        if (number < 2) {
+            check = false;
+        } else {
+            for (let i = 2; i < number; i++) {
+                if (number % i === 0) {
+                    check = false;
+                    break;
+                }
+            }
+        }
+        if (check) {
+            document.getElementById('result').innerHTML = (number + ' is a Prime number');
+            return check
+        } else {
+            document.getElementById('result').innerHTML = (number + ' is not Prime number');
+            return check
+        }
+    }
+    isPrime(number)
+    let totalPrime = 0;
+    for (let i = 0; i < 10000; i++) {
+        if (isPrime(i)) {
+            document.write(i + ' ')
+            totalPrime += i
+            // } else {
+            //     continue;
+            // }
+        }
+    }
+    document.getElementById('result1').innerHTML = ('total Prime is : ' + totalPrime);
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -5,6 +5,19 @@
     <title>Title</title>
 </head>
 <body>
-
+<h1>DO U LUV ME ?</h1>
+<button onclick="co()">Yes</button>
+<button id="no" onmouseover="ko()" style="position: absolute;left: 80px;top: 80px">No</button>
+<script>
+    function co() {
+        alert("Ok baby!")
+    }
+    function ko() {
+        let a = window.innerWidth;
+        let b = window.innerHeight;
+        document.getElementById('no').style.left = Math.round(a * Math.random()) + 'px';
+        document.getElementById('no').style.top = Math.round(b * Math.random()) + 'px';
+    }
+</script>
 </body>
 </html>
