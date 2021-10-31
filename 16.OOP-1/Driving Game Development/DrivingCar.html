@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Driving Car Game</title>
+    <link rel="stylesheet" href="css/car.css">
+</head>
+<body onkeydown="myGame.moveCar(event)">
+<div style="text-align: center;">
+    <button onclick="startGame()">Start</button><button onclick="instruction()">Xem Huong Dan</button><br>
+    <div class="column" id="info">
+        <img src="images/speed.png"  alt="My img"><br>
+        <span style="font-size: 400%; color: white;">
+            <span id="speed"> </span> <span>KM/H</span>
+        </span>
+        <div id="maxspeed">
+            <div id="currentspeed" style="width: 60%;"></div>
+        </div>
+    </div>
+    <div class="column">
+        <canvas id="canvas" width="500px" height="700px"
+                style="border: 1px solid black;"></canvas>
+    </div>
+    <div class="column" id="scoreboard">
+
+        <span style="font-size: 500%; color: white;"><span> Score: </span> <span id="score"></span></span>
+    </div>
+</div>
+<script src="js/car.js"></script>
+</body>
+</html>

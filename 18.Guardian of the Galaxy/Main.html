@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="Meteors.js"></script>
+    <script src="Captain.js"></script>
+    <style>
+        table {
+            border: solid black;
+            width: 500px;
+            border-collapse: collapse;
+        }
+
+        th, tr, td {
+            border: solid black;
+
+        }
+
+        img {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas1" width="500px" height="650px" style="background: url('images/theme2.jpg')"></canvas>
+<table id="scoreBoard">
+    <tr>
+        <th>Name</th>
+        <th>Point</th>
+    </tr>
+    <tr>
+        <td id="name"></td>
+        <td id="point"></td>
+    </tr>
+</table>
+<img src="images/MavelCap.png" id="captainImg" alt="Something is not right!">
+<img src="images/Hulk.png" id="Img" alt="Something is not right!">
+<img src="images/earth2.jpg" id="earthImg" alt="Something is not right!">
+<img src="images/Meteors.png" id="meteorImg" alt="Something is not right!">
+
+<button style="position: absolute; left: 245px; top: 320px"
+        id="start" type="button" onclick="start()">Start
+</button>
+<button type="button" onclick="restart()">restart</button>
+</body>
+<script>
+    // loadData();
+    let scoreBoard = loadData();
+    let captainImg = document.getElementById('captainImg');
+    let earthImg = document.getElementById('earthImg');
+    let meteorImg = document.getElementById('meteorImg');
+    let name = [];
+    let score = 0;
+    let canvas = document.getElementById('canvas1');
+    let ctx = canvas.getContext("2d");
+
+    let meteors = new Meteor();
+    let captain = new Captain(100, 180)
+    captain.init(canvas);
+
+    function drawScore() {
+        ctx.fillStyle = "#ffffff"
+        ctx.font = "30px Arial";
+        ctx.fillText("Point: " + score, 150, 100);
+    }
+
+    function clearSky() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
+    }
+
+    function drawGameOver() {
+        clearInterval(timerId);
+        drawSky();
+        ctx.fillStyle = "#ffffff";
+        ctx.font = "30px Arial";
+        ctx.fillText("Game Over", 150, 100);
+    }
+
+    function drawSky() {
+        ctx.drawImage(earthImg, 0, 0, 500, 650)
+    }
+
+    function draw() {
+        drawSky();
+        drawObject();
+    }
+
+    function drawObject() {
+        meteors.render(canvas);
+        captain.render(canvas);
+        drawScore();
+    }
+
+    function start() {
+        // getName();
+        timerId = setInterval(loop, 20);
+        let buttonStart = document.getElementById("start")
+        buttonStart.style.display = "none"
+    }
+
+    function restart() {
+        //location.reload();
+        clearInterval(timerId);
+        timerId = setInterval(loop, 20);
+    }
+
+    function loop() {
+        meteors.update(captain);
+        draw();
+    }
+
+    function getPoint() {
+        document.getElementById('point').innerHTML = score ;
+    }
+
+    function getName() {
+        name = prompt('tell me your name');
+        document.getElementById('name').innerHTML = name;
+    }
+
+    function saveData() {
+        localStorage.setItem('name', JSON.stringify(scoreBoard));
+    }
+
+    function loadData() {
+        if (localStorage.hasOwnProperty('name')) {
+            let data = JSON.parse(localStorage.getItem('name'));
+            return data;
+        } else {
+            return [];
+        }
+    }
+
+</script>
+
+</html>
