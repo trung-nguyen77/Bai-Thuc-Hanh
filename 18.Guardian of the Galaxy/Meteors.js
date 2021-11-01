@@ -24,20 +24,16 @@ class Meteor {
     }
 
     checkHitCaptain(captain) {
-
         if (this.y + 70  >= 450) {
-            // console.log("----------------------------------------------")
-            // console.log(this.x)
-            // console.log(captain.a)
             if ((this.x + 50 > captain.a) &&
                 (this.x + 50 < (captain.a + captain.width)) || (this.x  > captain.a) && (this.x  < (captain.a + captain.width)) ) {
-
                 this.y = 0;
-                score += 1;
-                this.speed += 2;
-                if (score > 10 && score % 5 === 0) {
-                    this.speed = 10
+                score += 10;
+                this.speed += 1;
+                if (score > 100 && score % 5 === 0) {
+                    this.speed += 2
                     this.render(canvas)
+
                 }
                 this.init();
             } else {

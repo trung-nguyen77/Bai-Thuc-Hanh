@@ -12,7 +12,7 @@ class Captain {
         })
 
         function processMouseMove(event) {
-            let rect = canvas.getBoundingClientRect();
+            // let rect = canvas.getBoundingClientRect();
             captain.a = event.clientX - 50;
         }
     }
@@ -21,4 +21,5 @@ class Captain {
         let ctx = canvas.getContext('2d');
         ctx.drawImage(captainImg, this.a, this.b, this.width, this.height)
     }
+
 }

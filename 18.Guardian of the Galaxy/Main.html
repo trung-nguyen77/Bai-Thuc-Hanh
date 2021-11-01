@@ -35,7 +35,7 @@
     </tr>
 </table>
 <img src="images/MavelCap.png" id="captainImg" alt="Something is not right!">
-<img src="images/Hulk.png" id="Img" alt="Something is not right!">
+<!--<img src="images/Hulk.png" id="hulkImg" alt="Something is not right!">-->
 <img src="images/earth2.jpg" id="earthImg" alt="Something is not right!">
 <img src="images/Meteors.png" id="meteorImg" alt="Something is not right!">
 
@@ -46,8 +46,9 @@
 </body>
 <script>
     // loadData();
-    let scoreBoard = loadData();
+    // let scoreBoard = loadData();
     let captainImg = document.getElementById('captainImg');
+    // let hulkImg = document.getElementById('hulkImg');
     let earthImg = document.getElementById('earthImg');
     let meteorImg = document.getElementById('meteorImg');
     let name = [];
@@ -66,7 +67,7 @@
     }
 
     function clearSky() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height)
+        ctx.clearRect(0, 0, e.width, canvas.height)
     }
 
     function drawGameOver() {
@@ -88,7 +89,7 @@
 
     function drawObject() {
         meteors.render(canvas);
-        captain.render(canvas);
+        captain.render(canvas, captainImg);
         drawScore();
     }
 
@@ -119,9 +120,9 @@
         document.getElementById('name').innerHTML = name;
     }
 
-    function saveData() {
-        localStorage.setItem('name', JSON.stringify(scoreBoard));
-    }
+    // function saveData() {
+    //     localStorage.setItem('name', JSON.stringify(scoreBoard));
+    // }
 
     function loadData() {
         if (localStorage.hasOwnProperty('name')) {
